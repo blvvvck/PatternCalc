@@ -12,14 +12,27 @@ class CalcInteractor: CalcInteractorInput {
 
     weak var presenter: CalcInteractorOutput!
     
+    var sign: Signs = .nullifier
+    var firstNumber: Double = 0.0
+    var secondNumber: Double = 0.0
+    var isTyping: Bool = false
+    
     let errorMessage = "Нельзя делить на ноль"
 
-    func calculate(with firstNumber: Double, secondNumber: Double, sign: Signs)  {
+    func calculate(with symbol: String)  {
        
         var result: Double
         
+        let operation = symbol
+        if operation == "X²" {
+            sign = .square
+        }
+        if operation == "%" {
+            sign = .percent
+        }
+        
         if (sign == .divide && secondNumber == 0) {
-            presenter.didFinishCalculate(with: .Failure(errorMessage))
+            presenter.didFinishCalculate(with: .failure(with: errorMessage))
         }
         
         switch sign {
@@ -32,7 +45,7 @@ class CalcInteractor: CalcInteractorInput {
         default: result =  secondNumber
         }
         
-        presenter.didFinishCalculate(with: .Success(result))
+        presenter.didFinishCalculate(with: .success(with: result))
     }
     
 }

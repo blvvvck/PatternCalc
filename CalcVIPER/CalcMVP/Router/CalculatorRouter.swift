@@ -12,8 +12,11 @@ import UIKit
 class CalcRouter: CalcRouterProtocol {
     
     weak var view: UIViewController!
+    var alertFactory: AlertFactoryProtocol!
     
-    func showAlert(with alert: UIAlertController) {
-        view.present(alert, animated: true, completion: nil)
+    func showAlert(with errorMessage: String) {
+        let alert = alertFactory.getAlert(with: errorMessage)
+        view.present(alert, animated: true, completion: nil)        
     }
+    
 }

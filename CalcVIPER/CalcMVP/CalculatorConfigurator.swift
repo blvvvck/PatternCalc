@@ -12,7 +12,8 @@ import UIKit
 class CalcConfigurator {
     
     static func setupModule() -> ViewController? {
-        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CalcView") as! ViewController
+
+        let viewController = ViewController.instantiate(fromAppStoryboard: .main)
         
         let presenter = CalcPresenter()
         let iteractor = CalcInteractor()
@@ -28,7 +29,7 @@ class CalcConfigurator {
         router.view = viewController
         
         let alertFactorys = AlertFactory()
-        presenter.alertFactory = alertFactorys
+        router.alertFactory = alertFactorys
         presenter.router = router
         
         return viewController

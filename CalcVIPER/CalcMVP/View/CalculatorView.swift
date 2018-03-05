@@ -9,5 +9,9 @@
 import Foundation
 
 protocol CalcView: class {
+    
+    /// Отображает числа в окне ввода
+    ///
+    /// - Parameter digit: отображаемое число
     func setDigits(digit: String)
 }

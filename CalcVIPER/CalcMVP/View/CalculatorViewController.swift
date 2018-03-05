@@ -39,14 +39,16 @@ class ViewController: UIViewController, CalcView {
         resultLabel.text = digit
     }
     
-    func showAlert(with message: String) {
-        
-        let alert = UIAlertController(title: "Ошибка!", message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-        
+}
+
+extension UIViewController {
+    class var storyboardID : String {
+        return "\(self)"
     }
-
-
+    
+    static func instantiate(fromAppStoryboard appStoryboard: AppStoryboards) -> Self {
+        
+        return appStoryboard.viewController(viewControllerClass: self)
+    }
 }
 

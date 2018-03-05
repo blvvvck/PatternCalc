@@ -8,7 +8,14 @@
 
 import Foundation
 
+
+/**
+ Результаты вычислений.
+ 
+ - success: Вычисление прошло удачно.
+ - failure: Во время вычисления произошла ошибка.
+ */
 enum CalcResult {
-    case Success(Double)
-    case Failure(String)
+    case success(with: Double)
+    case failure(with: String)
 }

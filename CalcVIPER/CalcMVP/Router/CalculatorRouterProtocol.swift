@@ -11,6 +11,9 @@ import UIKit
 
 protocol CalcRouterProtocol {
     
-    func showAlert(with alert: UIAlertController)
+    /// Отобразить алерт
+    ///
+    /// - Parameter alert: сообщение для отображения в алерте
+    func showAlert(with errorMessage: String)
     
 }

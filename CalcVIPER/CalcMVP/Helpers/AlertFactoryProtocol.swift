@@ -11,6 +11,10 @@ import UIKit
 
 protocol AlertFactoryProtocol {
     
+    /// Получение алерта с сообщением ошибки
+    ///
+    /// - Parameter message: сообщение ошибки
+    /// - Returns: готовый алерт
     func getAlert(with message: String) -> UIAlertController
     
 }

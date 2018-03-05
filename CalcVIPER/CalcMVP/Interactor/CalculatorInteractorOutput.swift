@@ -10,6 +10,9 @@ import Foundation
 
 protocol CalcInteractorOutput: class {
     
+    /// Вычисление завершено
+    ///
+    /// - Parameter result: результат вычисления
     func didFinishCalculate(with result: CalcResult)
     
 }

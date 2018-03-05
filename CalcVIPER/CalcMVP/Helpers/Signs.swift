@@ -8,6 +8,15 @@
 
 import Foundation
 
+/// Арифметические операции
+///
+/// - addition: сложение
+/// - subtraction: вычитание
+/// - multiply: умножение
+/// - divide: деление
+/// - percent: процент числа
+/// - square: возведение в квадрат
+/// - nullifier: обнуление знака
 enum Signs: String {
     case addition = "+"
     case subtraction = "-"
